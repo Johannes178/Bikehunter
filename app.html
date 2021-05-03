@@ -2,17 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Appp</title>
+    <title>App</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.13.0/mapbox-gl.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- tyylitiedosotot -->
 </head>
 <body>
+
+<div id="container">
+    <video id="appvideo" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+        <source src="media/appbackround.mp4" type="video/mp4">
+        Sorry, your browser does not support HTML5 video.
+    </video>
+</div>
+
 <div class="navbar">
     <div class="navbarContent">
         <div class="navbarLinks">
             <ul id="links">
-                <li><a href="app.html">Start</a></li>
+                <li><a href="app.html">App</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </div>
@@ -21,12 +29,15 @@
 <div>
 </div>
 <div id="pyoraHakuhtml" class="hidden">
-    <h3>Tarkempia tietoja saat klikkaamalla merkistä</h3>
+    <h3>Click on the location for info on Citybikes</h3>
 </div>
+
 <div id="map">
-    <img id="kuvat" src="MEDIA/political-world-map.jpg" alt="Avattu odens-purkki" >
+    <img id="kuvat" src="media/political-world-map.jpg" alt="Avattu odens-purkki" >
+
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.13.0/mapbox-gl.js"></script>
-<script src="JS/bikehunter.js"></script>
+<script src="js/bikehunter.js"></script>
 </body>
 </html>
+
