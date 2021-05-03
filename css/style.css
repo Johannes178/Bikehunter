@@ -91,11 +91,14 @@ body {
     display: inline-flex;
     left: 42%;
     position: relative;
+    list-style-type: none;
 }
 #links li{
     margin: 15px;
 }
-
+#links li a{
+    text-decoration: none;
+}
 #kuvat {
     margin-left: auto;
     margin-right: auto;
