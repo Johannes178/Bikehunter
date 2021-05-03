@@ -101,6 +101,25 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+    #appvideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 90% !important;
+        max-height: 110% !important;
+        max-width: 95% !important;
+        min-height: 90% !important;
+        z-index: -1000;
+        overflow: hidden;
+        object-fit: fill;
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        -o-filter: blur(10px);
+        -ms-filter: blur(10px);
+        filter: blur(10px);
+        transform: scale(1.1)
+    }
+
     .navbarContent {
         margin: auto;
         overflow: hidden;
