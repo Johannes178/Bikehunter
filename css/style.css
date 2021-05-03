@@ -99,6 +99,30 @@ body {
 #links li a{
     text-decoration: none;
 }
+
+@media screen and (max-width: 600px) {
+    .navbarContent {
+        margin: auto;
+        overflow: hidden;
+        width: 100%;
+        vertical-align: center;
+        height: fit-content;
+
+    }
+    #links {
+        display: inline-flex;
+        list-style-type: none;
+        left: 20%;
+        position: relative;
+    }
+    #links li{
+        margin: 15px;
+    }
+    #links li a{
+        text-decoration: none;
+    }
+}
+
 #kuvat {
     margin-left: auto;
     margin-right: auto;
