@@ -141,6 +141,47 @@ body {
         text-decoration: none;
     }
 }
+@media screen and (max-width: 800px) {
+    #appvideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 90% !important;
+        max-height: 110% !important;
+        max-width: 95% !important;
+        min-height: 90% !important;
+        z-index: -1000;
+        overflow: hidden;
+        object-fit: fill;
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        -o-filter: blur(10px);
+        -ms-filter: blur(10px);
+        filter: blur(10px);
+        transform: scale(1.1)
+    }
+
+    .navbarContent {
+        margin: auto;
+        overflow: hidden;
+        width: 100%;
+        vertical-align: center;
+        height: fit-content;
+
+    }
+    #links {
+        display: inline-flex;
+        list-style-type: none;
+        left: 36%;
+        position: relative;
+    }
+    #links li{
+        margin: 15px;
+    }
+    #links li a{
+        text-decoration: none;
+    }
+}
 
 #kuvat {
     margin-left: auto;
