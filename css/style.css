@@ -81,7 +81,7 @@ body {
 .navbarContent {
     margin: auto;
     overflow: hidden;
-    width: 1200px;
+    width: 100%;
     vertical-align: center;
     height: fit-content;
 
