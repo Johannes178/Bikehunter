@@ -45,7 +45,7 @@ fetch(url, {
     .then((res) =>
     {
         const container = document.querySelector(".mapboxgl-canvas-container")
-        const pyoraTulostus = document.getElementById('pyoraHakuhtml');
+        const pyoraTulostus = document.getElementById('pyoraHaku');
     
     //we need to tell mapboxgl what kind of collection of markers is this
     //so we initialize the collection with the necessary info
