@@ -1,9 +1,13 @@
+/* fetches the HSL official font */
 @import url(//db.onlinewebfonts.com/c/dffb2b80813d195d26fa4d2aad48b059?family=Gotham+Rounded);
 
+/* setting the font for the entire page */
 body {
     font-family:'Gotham Rounded', sans-serif;
 }
 
+
+/* blur filters and position code for the backround videos */
 #appvideo {
     position: absolute;
     top: 0;
@@ -20,6 +24,8 @@ body {
     filter: blur(10px);
 }
 
+/* map position code */
+
 #map {
     width: 80%;
     height: 1000px;
@@ -27,6 +33,9 @@ body {
     border-radius: 5px;
     margin: auto;
 }
+
+/* dark markers for the map to indicate bike stations */
+
 .marker {
     /* The following icon is owned by Stadia Maps. While you maintain an account with us, we grant you royalty-free use of
      * this image when displayed on our maps.
@@ -37,6 +46,8 @@ body {
     height: 42px;
     cursor: pointer;
 }
+
+/* class for the javascript app in the map */
 
 #pyoraHakuhtml {
     width: 80%;
@@ -49,6 +60,8 @@ body {
     opacity: 80%;
 }
 
+/* text box for about page info*/
+
 #about {
     width: 70%;
     border: 1px solid #111111;
@@ -59,10 +72,15 @@ body {
     text-align: center;
     opacity: 80%;
 }
+
+/* embedded video made by Ultrawide Ambassadors Inc */
+
 #aboutvideo{
     width: inherit;
     height: inherit;
 }
+
+/* fixes the navbar in the top of the page */
 
 .navbar {
     position: center;
@@ -75,6 +93,8 @@ body {
     opacity: 80%;
     min-width: 100%;
 }
+
+/* fixes the navbar's links into a fixed position */
 
 .navbarContent {
     margin: auto;
@@ -97,6 +117,8 @@ body {
 #links li a{
     text-decoration: none;
 }
+
+/* all of the above but with optimisation for mobile screens */
 
 @media screen and (max-width: 600px) {
     #appvideo {
@@ -180,6 +202,8 @@ body {
         text-decoration: none;
     }
 }
+
+/* easter egg for the smart people */
 
 #kuvat {
     margin-left: auto;
