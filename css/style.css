@@ -63,7 +63,8 @@ body {
 /* text box for about page info*/
 
 #about {
-    width: 70%;
+    width: 80%;
+    height: 100%;
     border: 1px solid #111111;
     border-radius: 5px;
     background: #fed100;
