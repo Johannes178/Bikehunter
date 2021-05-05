@@ -7,10 +7,9 @@ let markerCollection = {
     "features": []
 };;
 
-let darkTheme = false;
 let map = undefined;
-function switchThemes(){
-if(darkTheme === true){
+function switchThemes(theme){
+if(theme === "dark"){
 map = new mapboxgl.Map({
     container: 'map',
     style: 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json',  // Style URL; see our documentation for more options
@@ -19,7 +18,7 @@ map = new mapboxgl.Map({
 });
     map.addControl(new mapboxgl.NavigationControl());
     drawMarkers()
-}else if(darkTheme === false){
+}else if(theme === "light"){
     map = new mapboxgl.Map({
         container: 'map',
         style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json',  // Style URL; see our documentation for more options
