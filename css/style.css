@@ -268,7 +268,7 @@ body.dark {
 }
 
 .label {
-    background-color: #111;
+    background-color: #474747;
     border-radius: 25px;
     cursor: pointer;
     display: flex;
@@ -285,8 +285,8 @@ body.dark {
     background-color: #fff;
     border-radius: 50%;
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: 1px;
+    left: 1px;
     height: 11px;
     width: 11px;
     transform: translateX(0px);
