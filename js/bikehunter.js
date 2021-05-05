@@ -181,3 +181,6 @@ if(localStorage.getItem('darkMode') == 'enabled'){
         localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
     }
 }
+if(localStorage.getItem('darkMode') == 'disabled'){
+    switchThemes("light");
+}
