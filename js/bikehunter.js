@@ -2,50 +2,47 @@
 
 
 let url = 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql';
-//we need to tell mapboxgl what kind of collection of markers is this
-//so we initialize the collection with the necessary info
 let markerCollection = {
     "type": "FeatureCollection",
     "features": []
-};
+};;
 
+let darkTheme = false;
 let map = undefined;
-function switchThemes(theme){
-if(theme === "dark"){
+function switchThemes(){
+if(darkTheme === true){
 map = new mapboxgl.Map({
     container: 'map',
     style: 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json',  // Style URL; see our documentation for more options
     center: [24.93, 60.19],  // Initial focus coordinate
     zoom: 10
 });
-
+    map.addControl(new mapboxgl.NavigationControl());
     drawMarkers()
-}else if(theme === "light"){
+}else if(darkTheme === false){
     map = new mapboxgl.Map({
         container: 'map',
         style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json',  // Style URL; see our documentation for more options
         center: [24.93, 60.19],  // Initial focus coordinate
         zoom: 10
     });
-
+    map.addControl(new mapboxgl.NavigationControl());
     drawMarkers()
 
 }
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl());
-//event listener checks if the user clicks somewhere on the map and runs showInfo()
+    window.removeEventListener("click", showInfo)
     window.addEventListener("click", showInfo)
 }
 fetchStations()
-window.addEventListener("load", switchThemes)
+window.addEventListener("load", switchThemes())
 // Mapbox GL JS has a bug in it's handling of RTL, so we have to grab this dependency as well until they
 // combine it with the main library
 mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.1/mapbox-gl-rtl-text.js');
 
+// Add zoom and rotation controls to the map.
 
 
-
-
+const pyoraTulostus = document.querySelector('#pyoraHaku');
 async function fetchStations(){
 //fetch information of bikes from digitransit.fi api
 const response = await fetch(url, {
@@ -72,6 +69,10 @@ const response = await fetch(url, {
 
     const res = await response.json();
 
+
+    //we need to tell mapboxgl what kind of collection of markers is this
+    //so we initialize the collection with the necessary info
+
     //loop through the info we collected from the api
         for await (let i of res["data"]["bikeRentalStations"]) {
             //then we parse the info from the api to the correct form for mapboxgl
@@ -96,7 +97,7 @@ const response = await fetch(url, {
     }console.log(markerCollection);
 
 drawMarkers()
-
+//event listener checks if the user clicks somewhere on the map
 
 }
 
@@ -131,8 +132,7 @@ function drawMarkers(){
 
     });
 }
-const pyoraTulostus = document.querySelector('#pyoraHaku');
-// showInfo shows the information of the station in DOM
+
 function showInfo(event) {
     //then we check if the user clicked on a marker
     if(event.target.classList.contains("mapboxgl-marker")){
@@ -157,28 +157,11 @@ function showInfo(event) {
 let chk = document.querySelector('#chk');
 
 chk.addEventListener('change', () => {
-
+    darkTheme = !darkTheme
+    switchThemes()
     console.log("checkbox clicked")
     document.body.classList.toggle('dark');
     document.querySelector("#pyoraHaku").classList.toggle('dark');
     document.querySelector(".navbarContent").classList.toggle('dark');
-    if(document.body.classList.contains('dark')){ //when the body has the class 'dark' currently
-        localStorage.setItem('darkMode', 'enabled'); //store this data if dark mode is on
-        switchThemes("dark")
-    }else{
-        localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
-        switchThemes("light")
-    }
 
 });
-if(localStorage.getItem('darkMode') == 'enabled'){
-    switchThemes("dark")
-    document.body.classList.toggle('dark');
-    document.querySelector("#pyoraHaku").classList.toggle('dark');
-    document.querySelector(".navbarContent").classList.toggle('dark');
-    if(document.body.classList.contains('dark')){ //when the body has the class 'dark' currently
-        localStorage.setItem('darkMode', 'enabled'); //store this data if dark mode is on
-    }else{
-        localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
-    }
-}
