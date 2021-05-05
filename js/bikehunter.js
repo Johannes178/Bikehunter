@@ -142,11 +142,11 @@ function showInfo(event) {
         console.log(markerCollection.features[itemKey])
         //now with the unique id we can print it on to DOM
         let html = `
-                <h3 id="name">Aseman nimi: ${markerCollection.features[itemKey].properties.title}</h3>
-    <h4 id="stationid">Aseman numero: ${markerCollection.features[itemKey].properties.stationId}</h4>
-    <p id="bikes">Pyörien määrä: ${markerCollection.features[itemKey].properties.bikesAvailable}</p>
-    <p id="spaces">Vapaat paikat: ${markerCollection.features[itemKey].properties.spacesAvailable}</p>
-    <p id="allow">Pyörän jättäminen sallittu: ${markerCollection.features[itemKey].properties.allowDropoff ? "kyllä" : "ei"}</p>
+                <h3 id="name">Station name: ${markerCollection.features[itemKey].properties.title}</h3>
+    <h4 id="stationid">Station number: ${markerCollection.features[itemKey].properties.stationId}</h4>
+    <p id="bikes">Bikes available: ${markerCollection.features[itemKey].properties.bikesAvailable}</p>
+    <p id="spaces">Bike spots available: ${markerCollection.features[itemKey].properties.spacesAvailable}</p>
+    <p id="allow">Drop off allowed: ${markerCollection.features[itemKey].properties.allowDropoff ? "yes" : "no"}</p>
             `
         pyoraTulostus.innerHTML = html;
     }else{console.log("error")}
