@@ -152,11 +152,10 @@ function showInfo(event) {
 }
 
 
-
+let checkbox = document.querySelector('.checkbox');
 let chk = document.querySelector('#chk');
 
 chk.addEventListener('change', () => {
-
     console.log("checkbox clicked")
     document.body.classList.toggle('dark');
     document.querySelector("#pyoraHaku").classList.toggle('dark');
@@ -171,6 +170,7 @@ chk.addEventListener('change', () => {
 
 });
 if(localStorage.getItem('darkMode') == 'enabled'){
+    checkbox.checked = true;
     switchThemes("dark")
     document.body.classList.toggle('dark');
     document.querySelector("#pyoraHaku").classList.toggle('dark');
@@ -182,5 +182,6 @@ if(localStorage.getItem('darkMode') == 'enabled'){
     }
 }
 if(localStorage.getItem('darkMode') == 'disabled'){
+    checkbox.checked = false;
     switchThemes("light");
 }
