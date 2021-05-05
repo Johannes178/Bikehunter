@@ -62,6 +62,17 @@ body {
     opacity: 80%;
 }
 
+#pyoraHaku.dark {
+    width: 80%;
+    border: 1px solid #111111;
+    border-radius: 5px;
+    color: cornflowerblue;
+    background-color: #121212;
+    margin: auto;
+    text-align: center;
+    opacity: 80%;
+}
+
 /* text box for about page info*/
 
 #about {
@@ -70,6 +81,18 @@ body {
     border: 1px solid #111111;
     border-radius: 5px;
     background: #fed100;
+    color: cornflowerblue;
+    margin: auto;
+    text-align: center;
+    opacity: 80%;
+}
+
+#about.dark {
+    width: 80%;
+    height: 100%;
+    border: 1px solid #111111;
+    border-radius: 5px;
+    background: #121212;
     color: cornflowerblue;
     margin: auto;
     text-align: center;
@@ -107,6 +130,15 @@ body {
     height: fit-content;
 
 }
+.navbarContent.dark {
+    margin: auto;
+    overflow: hidden;
+    width: 100%;
+    background: #121212;
+    vertical-align: center;
+    height: fit-content;
+
+}
 
 #links {
     display: inline-flex;
@@ -123,47 +155,7 @@ body {
 
 /* all of the above but with optimisation for mobile screens */
 
-@media screen and (max-width: 600px) {
-    #appvideo {
-        position: absolute;
-        top: 0;
-        left: 0;
-        min-width: 90% !important;
-        max-height: 100% !important;
-        max-width: 95% !important;
-        min-height: 90% !important;
-        z-index: -1000;
-        overflow: hidden;
-        object-fit: fill;
-        -webkit-filter: blur(10px);
-        -moz-filter: blur(10px);
-        -o-filter: blur(10px);
-        -ms-filter: blur(10px);
-        filter: blur(10px);
-        transform: scale(1.1)
-    }
 
-    .navbarContent {
-        margin: auto;
-        overflow: hidden;
-        width: 100%;
-        vertical-align: center;
-        height: fit-content;
-
-    }
-    #links {
-        display: inline-flex;
-        list-style-type: none;
-        left: 20%;
-        position: relative;
-    }
-    #links li{
-        margin: 15px;
-    }
-    #links li a{
-        text-decoration: none;
-    }
-}
 @media screen and (max-width: 800px) {
     #appvideo {
         position: absolute;
@@ -196,6 +188,47 @@ body {
         display: inline-flex;
         list-style-type: none;
         left: 36%;
+        position: relative;
+    }
+    #links li{
+        margin: 15px;
+    }
+    #links li a{
+        text-decoration: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    #appvideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 90% !important;
+        max-height: 100% !important;
+        max-width: 95% !important;
+        min-height: 90% !important;
+        z-index: -1000;
+        overflow: hidden;
+        object-fit: fill;
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        -o-filter: blur(10px);
+        -ms-filter: blur(10px);
+        filter: blur(10px);
+        transform: scale(1.1)
+    }
+
+    .navbarContent {
+        margin: auto;
+        overflow: hidden;
+        width: 100%;
+        vertical-align: center;
+        height: fit-content;
+
+    }
+    #links {
+        display: inline-flex;
+        list-style-type: none;
+        left: 20%;
         position: relative;
     }
     #links li{
