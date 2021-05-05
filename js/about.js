@@ -26,3 +26,7 @@ if(localStorage.getItem('darkMode') == 'enabled'){
         checkbox.checked = false;
         localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
     }}
+if(localStorage.getItem('darkMode') === null){
+    checkbox.checked = false;
+    localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
+}
