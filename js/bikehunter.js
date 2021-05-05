@@ -2,10 +2,12 @@
 
 
 let url = 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql';
+//we need to tell mapboxgl what kind of collection of markers is this
+//so we initialize the collection with the necessary info
 let markerCollection = {
     "type": "FeatureCollection",
     "features": []
-};;
+};
 
 let darkTheme = false;
 let map = undefined;
@@ -17,7 +19,7 @@ map = new mapboxgl.Map({
     center: [24.93, 60.19],  // Initial focus coordinate
     zoom: 10
 });
-    map.addControl(new mapboxgl.NavigationControl());
+
     drawMarkers()
 }else if(darkTheme === false){
     map = new mapboxgl.Map({
@@ -26,23 +28,25 @@ map = new mapboxgl.Map({
         center: [24.93, 60.19],  // Initial focus coordinate
         zoom: 10
     });
-    map.addControl(new mapboxgl.NavigationControl());
+
     drawMarkers()
 
 }
-    window.removeEventListener("click", showInfo)
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
+//event listener checks if the user clicks somewhere on the map and runs showInfo()
     window.addEventListener("click", showInfo)
 }
 fetchStations()
-window.addEventListener("load", switchThemes())
+window.addEventListener("load", switchThemes)
 // Mapbox GL JS has a bug in it's handling of RTL, so we have to grab this dependency as well until they
 // combine it with the main library
 mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.1/mapbox-gl-rtl-text.js');
 
-// Add zoom and rotation controls to the map.
 
 
-const pyoraTulostus = document.querySelector('#pyoraHaku');
+
+
 async function fetchStations(){
 //fetch information of bikes from digitransit.fi api
 const response = await fetch(url, {
@@ -69,10 +73,6 @@ const response = await fetch(url, {
 
     const res = await response.json();
 
-
-    //we need to tell mapboxgl what kind of collection of markers is this
-    //so we initialize the collection with the necessary info
-
     //loop through the info we collected from the api
         for await (let i of res["data"]["bikeRentalStations"]) {
             //then we parse the info from the api to the correct form for mapboxgl
@@ -97,7 +97,7 @@ const response = await fetch(url, {
     }console.log(markerCollection);
 
 drawMarkers()
-//event listener checks if the user clicks somewhere on the map
+
 
 }
 
@@ -132,7 +132,8 @@ function drawMarkers(){
 
     });
 }
-
+const pyoraTulostus = document.querySelector('#pyoraHaku');
+// showInfo shows the information of the station in DOM
 function showInfo(event) {
     //then we check if the user clicked on a marker
     if(event.target.classList.contains("mapboxgl-marker")){
