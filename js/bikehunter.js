@@ -33,7 +33,6 @@ map = new mapboxgl.Map({
     window.addEventListener("click", showInfo)
 }
 fetchStations()
-window.addEventListener("load", switchThemes())
 // Mapbox GL JS has a bug in it's handling of RTL, so we have to grab this dependency as well until they
 // combine it with the main library
 mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.1/mapbox-gl-rtl-text.js');
@@ -155,7 +154,7 @@ function showInfo(event) {
 let checkbox = document.querySelector('.checkbox');
 let chk = document.querySelector('#chk');
 
-chk.addEventListener('change', () => {
+chk.addEventListener('click', () => {
     console.log("checkbox clicked")
     document.body.classList.toggle('dark');
     document.querySelector("#pyoraHaku").classList.toggle('dark');
