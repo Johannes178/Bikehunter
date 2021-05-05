@@ -151,7 +151,13 @@ body {
 }
 #links li a{
     text-decoration: none;
+    color:white;
 }
+#links li a:visited{
+    text-decoration: none;
+    color:white;
+}
+
 
 /* all of the above but with optimisation for mobile screens */
 
@@ -237,6 +243,7 @@ body {
     #links li a{
         text-decoration: none;
     }
+
 }
 
 /* easter egg for the smart people */
