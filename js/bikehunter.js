@@ -156,7 +156,7 @@ function showInfo(event) {
 let checkbox = document.querySelector('.checkbox');
 let chk = document.querySelector('#chk');
 
-chk.addEventListener('click', () => {
+chk.addEventListener('change', () => {
     console.log("checkbox clicked")
     document.body.classList.toggle('dark');
     document.querySelector("#pyoraHaku").classList.toggle('dark');
