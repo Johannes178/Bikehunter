@@ -157,11 +157,28 @@ function showInfo(event) {
 let chk = document.querySelector('#chk');
 
 chk.addEventListener('change', () => {
-    darkTheme = !darkTheme
-    switchThemes()
+
     console.log("checkbox clicked")
     document.body.classList.toggle('dark');
     document.querySelector("#pyoraHaku").classList.toggle('dark');
     document.querySelector(".navbarContent").classList.toggle('dark');
+    if(document.body.classList.contains('dark')){ //when the body has the class 'dark' currently
+        localStorage.setItem('darkMode', 'enabled'); //store this data if dark mode is on
+        switchThemes("dark")
+    }else{
+        localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
+        switchThemes("light")
+    }
 
 });
+if(localStorage.getItem('darkMode') == 'enabled'){
+    switchThemes("dark")
+    document.body.classList.toggle('dark');
+    document.querySelector("#pyoraHaku").classList.toggle('dark');
+    document.querySelector(".navbarContent").classList.toggle('dark');
+    if(document.body.classList.contains('dark')){ //when the body has the class 'dark' currently
+        localStorage.setItem('darkMode', 'enabled'); //store this data if dark mode is on
+    }else{
+        localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
+    }
+}
