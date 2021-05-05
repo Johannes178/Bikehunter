@@ -257,7 +257,11 @@ body {
 }
 
 body.dark {
-    background: #292C35;
+    background-color: #111111;
+    color: #111111;
+
+
+
 
 }
 
