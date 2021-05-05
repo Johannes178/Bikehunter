@@ -1,6 +1,7 @@
 'use strict';
 
 
+
 let url = 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql';
 let markerCollection = {
     "type": "FeatureCollection",
@@ -32,6 +33,7 @@ map = new mapboxgl.Map({
     window.removeEventListener("click", showInfo)
     window.addEventListener("click", showInfo)
 }
+
 fetchStations()
 // Mapbox GL JS has a bug in it's handling of RTL, so we have to grab this dependency as well until they
 // combine it with the main library
@@ -168,6 +170,7 @@ chk.addEventListener('click', () => {
     }
 
 });
+
 if(localStorage.getItem('darkMode') == 'enabled'){
     checkbox.checked = true;
     switchThemes("dark")
@@ -180,7 +183,12 @@ if(localStorage.getItem('darkMode') == 'enabled'){
         localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
     }
 }
-if(localStorage.getItem('darkMode') == 'disabled'){
+if(localStorage.getItem('darkMode') === "disabled"){
     checkbox.checked = false;
+    switchThemes("light");
+}
+if(localStorage.getItem('darkMode') === null){
+    checkbox.checked = false;
+    localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
     switchThemes("light");
 }
