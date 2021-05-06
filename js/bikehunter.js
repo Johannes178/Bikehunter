@@ -149,7 +149,8 @@ function showInfo(event) {
     <p id="allow">Drop off allowed: ${markerCollection.features[itemKey].properties.allowDropoff ? "yes" : "no"}</p>
             `
         pyoraTulostus.innerHTML = html;
-    }else{console.log("error")}
+    }else{//console.log("error")
+    }
 }
 
 
@@ -157,7 +158,7 @@ let checkbox = document.querySelector('.checkbox');
 let chk = document.querySelector('#chk');
 
 chk.addEventListener('change', () => {
-    console.log("checkbox clicked")
+    //console.log("checkbox clicked")
     document.body.classList.toggle('dark');
     document.querySelector("#pyoraHaku").classList.toggle('dark');
     document.querySelector(".navbarContent").classList.toggle('dark');
