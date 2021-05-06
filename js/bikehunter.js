@@ -94,7 +94,7 @@ const response = await fetch(url, {
         //then we push collection now in the correct form into markerCollection
         markerCollection.features.push((collection))
 
-    }console.log(markerCollection);
+    }//console.log(markerCollection);
 
 drawMarkers()
 //event listener checks if the user clicks somewhere on the map
@@ -102,7 +102,7 @@ drawMarkers()
 }
 
 function drawMarkers(){
-    console.log("beginning to draw")
+    //console.log("beginning to draw")
     let z = 0;
     // Next, we can add markers to the map
     markerCollection.features.forEach(function(point) {
@@ -136,7 +136,7 @@ function drawMarkers(){
 function showInfo(event) {
     //then we check if the user clicked on a marker
     if(event.target.classList.contains("mapboxgl-marker")){
-        console.log("clicked")
+        //console.log("clicked")
         //we grab the unique value from data-id attribute
         const itemKey = event.target.dataset.id;
         console.log(markerCollection.features[itemKey])
