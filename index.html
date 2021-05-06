@@ -7,9 +7,10 @@
     <title>App</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.13.0/mapbox-gl.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <!-- tyylitiedosotot -->
 </head>
 <body>
+
+<!-- container for the background videos -->
 
 <div id="container">
     <video id="appvideo" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
@@ -18,6 +19,8 @@
         Sorry, your browser does not support HTML5 video.
     </video>
 </div>
+
+<!-- navbar % darkmode button -->
 
 <div class="navbar">
     <div class="navbarContent">
@@ -31,12 +34,13 @@
                         <span style="display: inline-flex; position: absolute; bottom: 1px; left: 2px;z-index: -1"><img src="media/Dark.png" style="transform: scale(0.75)"><img src="media/Light.png" style="transform: scale(0.75)"></span>
                         <div class="ball"></div>
                     </label>
-
                 </div>
             </ul>
         </div>
     </div>
 </div>
+
+<!-- div for the map function and the map itself (in JS) -->
 
 <div id="pyoraHaku" class="hidden">
     <h3>Click on the location for info on Citybikes</h3>
